@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Regular", sans-serif;
+  }
+
+.main-login{
+    background-image: url(../images/bg2purple.svg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.learn-more-button {
+    display: inline-block;
+    background-color: #007bff; /* Set your desired background color */
+    color: #fff; /* Set text color */
+    padding: 10px 20px; /* Set padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    text-decoration: none; /* Remove default link underline */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .learn-more-button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+  }

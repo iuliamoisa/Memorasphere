@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+
+.memories-page{
+    background-color: #D4B4F4;  
+    min-height: 100vh;
+    padding-top: 0.5rem;
+}
+
+.memories-title{
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: regular;
+    font-size: 3rem;
+    width:100%;
+    margin: 2rem auto;
+    text-align: center;
+    background-color: #FCFF6A;
+    padding: 1rem 0;
+    border: 3px solid black;
+}
+
+.no-entries-img{
+    width: 15%;
+    height: auto;
+    margin: 3.5rem auto;
+    display: block;
+}
+
+.no-entries-txt{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+.create-entry-button{
+  width: 100%;
+  text-align: center;
+  
+    
+}
+.submit-button{
+  padding: 20px;
+  background-color: #B384E1;
+  color: black;
+  border: 3px solid black;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .no-entries-img {
+    width: 60%;
+  }
+
+  .no-entries-txt {
+    font-size: 1.2rem;
+  }
+}

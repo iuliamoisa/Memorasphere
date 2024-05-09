@@ -1,36 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400;1,700&display=swap');
+
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 50%;
+    background-color: yellow;
+    height: 100%;
+    margin-left: auto;
+  }
+  .form-name{
+    display:none;
+  }
+  .form-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   
   .form-input {
-    width: 90%;
-    padding: 10px;
+    width: 75%;
+    padding: 20px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 3px solid black;
+    border-radius: 1em;
     box-sizing: border-box;
+    background-color:#D4B4F4;
+    color: black;
+    font-size: 1.2em;
+    
+    
   }
-  
+  .form-input::placeholder {
+    color: #D4B4F4; /* Match the background color */
+  }
+  .form-label{
+    font-size: 1.5em;
+    color: black;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 15%;
+  }
   .form-button {
-    width: 95%;
-    padding: 10px;
-    margin: 20px 0;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    width: 25%;
+    padding: 20px;
+    margin-top: 4rem;
+    background-color: #B384E1;
+    color: black;
+    border: 3px solid black;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+    font-size: 1.5em;
   }
   
   .form-button:hover {
-    background-color: #0056b3;
+    background-color: #a368df;
   }

@@ -1,68 +1,60 @@
-/* Container for the whole page */
-div {
-    font-family: Arial, sans-serif;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   
-  /* Styles for the entries section */
-  .entries-section {
-    margin-bottom: 2rem;
-  }
-  
-  .entries-section h2 {
-    color: #333;
-    font-size: 24px;
-  }
-  
-  /* Styles for individual entries - assuming your entry component has some container element */
-  .entry {
-    background-color: #f9f9f9;
-    border-left: 5px solid #007bff;
-    margin: 10px 0;
-    padding: 10px 15px;
-    border-radius: 5px;
-  }
-  
-  /* Styles for the form section */
-  form {
-    background-color: #fff;
+}
+
+.main-home {
+  background-image: url(../images/bg1.svg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.home-title{
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 6rem;
+    width:40%;
+    padding: 4rem; 
+}
+
+.home-subtitle{
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 200;
+    font-size: 2.5rem;
+    width:30%;
+    padding: 2rem; 
+    margin: 0 4rem;
+}
+
+
+.home-button {
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
-  }
-  
-  form h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  form label {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .submit-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
+    margin: 1rem;
+    background-color: #B384E1;
+    color: black;
+    border: 3px solid black;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 1em;
   }
   
-  .submit-button:hover {
-    background-color: #0056b3;
+  .home-button:hover {
+    background-color: #a368df;
+  }
+
+  .home-buttons{
+    width:30%;
+    margin-right: auto;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: space-around;
   }
