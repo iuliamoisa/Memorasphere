@@ -16,6 +16,7 @@
     background-color: #D4B4F4;  
     min-height: 100vh;
     padding-top: 0.5rem;
+    width:100%;
 }
 
 .memories-title{
@@ -43,6 +44,13 @@
     text-align: center;
     margin: 1rem;
     font-weight: 600;
+}
+
+.entries{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem; 
+  height: 100vh;
 }
 
 .create-entry-button{

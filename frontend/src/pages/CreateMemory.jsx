@@ -74,31 +74,101 @@ function CreateMemory() {
         setImageLoading(false);
     };
     
-    const handleImageDisplay = async () => {
+    // const handleImageDisplay = async () => {
+    //     try {
+    //         setLoading(true);
+
+    //         const response = await axios.post("http://127.0.0.1:8000/api/download_image/", {}, {
+    //             responseType: 'blob'
+    //         });
+    //         console.log("Răspuns de la backend:", response);
+
+    //         if (response.status === 200) {
+    //             const url = URL.createObjectURL(response.data);
+    //             setGeneratedImage(url);
+    //         } else {
+    //             console.error("Error: Response status is not 200");
+    //         }
+    //     } catch (error) {
+    //         console.error("Error downloading image:", error);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
+
+    const handleSave = async () => {
         try {
             setLoading(true);
+            let imageDataUrl = "";
 
-            const response = await axios.post("http://127.0.0.1:8000/api/download_image/", {}, {
-                responseType: 'blob'
-            });
-            console.log("Răspuns de la backend:", response);
+            if (generatedImage) {
+                const response = await fetch(generatedImage);
+                const blob = await response.blob();
+                const reader = new FileReader();
 
-            if (response.status === 200) {
-                const url = URL.createObjectURL(response.data);
-                setGeneratedImage(url);
+                reader.onloadend = () => {
+                    imageDataUrl = reader.result;
+                    saveEntry(summary, imageDataUrl);
+                };
+                reader.readAsDataURL(blob);
             } else {
-                console.error("Error: Response status is not 200");
+                saveEntry(summary, imageDataUrl);
             }
         } catch (error) {
-            console.error("Error downloading image:", error);
+            console.error("Error saving entry:", error);
         } finally {
             setLoading(false);
         }
     };
-
-    const handleSave = () => {
-        // Implement save functionality
+    const saveEntry = (summary, imageDataUrl) => {
+        const payload = {
+            content: summary,
+            image: imageDataUrl 
+        };
+    
+        console.log("Payload being sent to the server:", payload);
+    
+        api.post('/api/entries/', payload, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((res) => {
+            if (res.status === 201) {
+                alert("Entry created");
+            } else {
+                alert("Failed to create entry");
+            }
+        })
+        .catch((err) => {
+            if (err.response) {
+                console.error("Error in API request:", err.response.data);
+                alert(`Failed to create entry: ${err.response.data.detail}`);
+            } else {
+                console.error("Error in API request:", err.message);
+                alert("Failed to create entry: An unknown error occurred");
+            }
+        });
     };
+
+    // const saveEntry = (summary, imageDataUrl) => {
+    //     api.post('/api/entries/', { summary, image: imageDataUrl })
+    //         .then((res) => {
+    //             if (res.status === 201) alert("Entry created");
+    //             else alert("Failed to create entry");
+    //         }).catch((err) => alert(err));
+    // };
+    //   const createEntry = (e) => {
+//       e.preventDefault()
+//       api
+//           .post('/api/entries/', {content})
+//           .then((res) => {
+//               if (res.status === 201) alert("Entry created")
+//               else alert("Failed to create entry")
+//               getEntries()
+//           }).catch((err) => alert(err));
+          
+//   }
 
     const handleCancel = () => {
         // Implement cancel functionality

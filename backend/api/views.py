@@ -216,6 +216,7 @@ class EntryListCreate(generics.ListCreateAPIView):
         else:
             print(serializer.errors)
 
+
 class EntryDelete(generics.DestroyAPIView):
     serializer_class = EntrySerializer
     permission_classes = [IsAuthenticated]

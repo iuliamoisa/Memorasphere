@@ -27,9 +27,8 @@ class UserSerializer(serializers.ModelSerializer):
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Entry
-        fields = ['id', 'content', 'created_at', 'author']
+        fields = ['id', 'content', 'image', 'created_at', 'author']
         extra_kwargs = {'author': {'read_only': True}}
-
 
 class GeneratedPhotoSerializer(serializers.ModelSerializer):
     class Meta:

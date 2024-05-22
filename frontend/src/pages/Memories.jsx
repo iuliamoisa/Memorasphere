@@ -56,26 +56,26 @@ function Memories() {
     navigate(path);
   }
   return (
-
     <div className="memories-page">
 
         <h1 className="memories-title">Your Digital Memories</h1>
-          {entry.map((entry) => <Entry entry={entry} onDelete={deleteEntry} key={entry.id}/>)}
+        <div className="create-entry-button">
+                <button className="submit-button" onClick={createMemory}>Create entry</button>
+            </div>
+          {/* {entry.map((entry) => <Entry entry={entry} onDelete={deleteEntry} key={entry.id}/>)} */}
           {entry.length === 0 ? (
                 <div className="no-entry-message">
                     <img className="no-entries-img" src={noEntryImg} alt="0 results found" />
                     <p className="no-entries-txt">There are currently no <i>entries</i> in your diary.</p>
                 </div>
             ) : (
-                <div>
+                <div className="entries">
                     {entry.map((entry) => (
-                        <Entry entry={entry} onDelete={deleteEntry} key={entry.id} />
+                        <Entry className="entry" entry={entry} onDelete={deleteEntry} key={entry.id} />
                     ))}
                 </div>
             )}
-            <div className="create-entry-button">
-                <button className="submit-button" onClick={createMemory}>Create entry</button>
-            </div>
+            
       {/* <h2>Create entry</h2>
       <form onSubmit={createEntry}>
           <label htmlFor='content'>Content</label>
