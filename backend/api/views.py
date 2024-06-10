@@ -17,41 +17,14 @@ from django.views.decorators.csrf import csrf_exempt
 from googleapiclient.http import MediaIoBaseDownload
 import io
 from django.http import HttpResponse
-# Create your views here.
-
-
-# @csrf_exempt
-# def check_image_status(request):
-#     try:
-#         # Încărcați cheia de serviciu JSON și autentificați-vă cu Google Drive API
-#         SERVICE_ACCOUNT_FILE = "api/licenta-419216-0b00d36b19da.json"
-#         SCOPES = ['https://www.googleapis.com/auth/drive']
-#         credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-#         drive_service = build('drive', 'v3', credentials=credentials)
-
-#         # Căutați imaginea în directorul specific
-#         folder_id = get_folder_id(drive_service)
-#         image_exists = check_image_in_drive(drive_service, folder_id)
-
-#         # Returnați un răspuns corespunzător în funcție de starea imaginii
-#         if image_exists:
-#             return JsonResponse({"status": "ready"})
-#         else:
-#             return JsonResponse({"status": "pending"})
-#     except Exception as e:
-#         print("Error checking image status:", e)
-#         return JsonResponse({"status": "error"})
 
 def get_folder_id(drive_service):
-    # Verificați dacă există un director cu numele 'licenta'
     query = f"name='licenta' and mimeType='application/vnd.google-apps.folder' and trashed=false"
     existing_folders = drive_service.files().list(q=query, fields='files(id)').execute().get('files', [])
     
-    # Întoarceți ID-ul directorului 'licenta' dacă acesta există
     if existing_folders:
         return existing_folders[0]['id']
     else:
-        # Creați directorul 'licenta' dacă nu există
         folder_metadata = {
             'name': 'licenta',
             "mimeType": "application/vnd.google-apps.folder",
@@ -59,12 +32,6 @@ def get_folder_id(drive_service):
         }
         created_folder = drive_service.files().create(body=folder_metadata, fields='id').execute()
         return created_folder["id"]
-
-# def check_image_in_drive(drive_service, folder_id):
-#     # Verificați dacă există o imagine în directorul specific
-#     query = f"'{folder_id}' in parents and mimeType='image/jpeg' and trashed=false"
-#     image_files = drive_service.files().list(q=query, fields='files(id)').execute().get('files', [])
-#     return len(image_files) > 0
 
 @csrf_exempt
 def download_image(request):
@@ -113,7 +80,6 @@ def download_image_from_drive(drive_service, file_id):
     return fh.read()
 
 def get_image_file_id(drive_service, folder_id):
-    # Verificați dacă există o imagine în directorul specific
     query = f"'{folder_id}' in parents and mimeType='image/jpeg' and trashed=false"
     image_files = drive_service.files().list(q=query, fields='files(id)').execute().get('files', [])
     if image_files:

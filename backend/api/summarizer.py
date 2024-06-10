@@ -96,7 +96,6 @@ def build_similarity_matrix(sentences, stop_words):
             
     return similarity_matrix
 
-#def read_article(file_name):
 def read_article(text):
     filedata = text.replace("\n", "")
     article = filedata.split(". ")

@@ -20,7 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         full_name = validated_data.pop('full_name') 
         user = User.objects.create_user(**validated_data)
-        user.full_name = full_name  # Setăm full_name-ul utilizatorului
+        user.full_name = full_name  
         user.save()
         return user
     

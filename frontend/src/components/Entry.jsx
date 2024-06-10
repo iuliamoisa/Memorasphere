@@ -28,5 +28,3 @@ Entry.propTypes = {
 };
 
 export default Entry;
-
-
