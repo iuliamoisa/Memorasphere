@@ -3,7 +3,7 @@ import "../styles/CreateMemory.css";
 import LoadingIndicator from '../components/LoadingIndicator';
 import api from '../api';
 import axios from "axios";
-
+import BackButton from '../components/BackButton';
 
 
 function CreateMemory() {
@@ -140,6 +140,7 @@ function CreateMemory() {
 
     return (
         <div className="create-memory-page">
+            <BackButton></BackButton>
             <h1 className="create-memory-title">What is in your mind?</h1>
             <div className="create-memory-content">
                 <div className="left-panel">

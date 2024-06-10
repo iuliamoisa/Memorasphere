@@ -9,6 +9,7 @@ import api from '../api'
 import Entry from '../components/Entry'
 import noEntryImg from '../images/no-entries.svg';
 import { useNavigate } from "react-router-dom";
+import BackButton from '../components/BackButton';
 
 function Memories() {
   const [entry, setEntries] = useState([])
@@ -44,7 +45,7 @@ function Memories() {
   }
   return (
     <div className="memories-page">
-
+        <BackButton></BackButton>
         <h1 className="memories-title">Your Digital Memories</h1>
         <div className="create-entry-button">
                 <button className="submit-button" onClick={createMemory}>Create entry</button>

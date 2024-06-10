@@ -5,13 +5,20 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css"
 import LoadingIndicator from "./LoadingIndicator";
 
-function Form({ route, method }) {
+function Form({ route, method: initialMethod }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const navigate = useNavigate();
+
+    const [method, setMethod] = useState(initialMethod);
+
+    const handleRegisterClick = () => {
+        setMethod('register');
+        navigate('/register');
+    };
 
     const name = method === "login" ? "Login" : "Register";
 
@@ -93,6 +100,9 @@ function Form({ route, method }) {
             <button className="form-button" type="submit">
                 {name}
             </button>
+            {method === "login" && (
+                <button className="form-button" type="button" onClick={handleRegisterClick}>Register</button>
+            )}
         </form>
     );
 }

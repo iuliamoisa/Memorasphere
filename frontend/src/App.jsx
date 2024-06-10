@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound"
 import HomeGuest from "./pages/HomeGuest"
 import Memories from "./pages/Memories"
 import CreateMemory from "./pages/CreateMemory"
+import Learn from "./pages/Learn"
 import ProtectedRoute from "./components/ProtectedRoute"
 
 function Logout(){
@@ -36,6 +37,7 @@ function App() {
       <Route path="/logout" element={<Logout />} />
       <Route path="/create-memo" element={<CreateMemory />} />
       <Route path="/memories" element={<Memories />} />
+      <Route path="/learnMore" element={<Learn />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
    </BrowserRouter>

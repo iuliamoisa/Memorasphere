@@ -1,0 +1,30 @@
+.learn-page{
+    background-image: url(../images/bg2purple.svg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.learn-page-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 60%;
+    background-color: yellow;
+    border: 3px solid black;
+    margin: 10% auto;
+}
+
+.learn-page-title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.learn-page-text{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 2rem;
+}

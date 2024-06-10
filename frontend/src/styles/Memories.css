@@ -59,6 +59,9 @@
   
     
 }
+.entry{
+  background-color: red;
+}
 .submit-button{
   padding: 20px;
   background-color: #B384E1;
