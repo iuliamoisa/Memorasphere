@@ -20,6 +20,7 @@
     background-color: yellow;
     height: 100%;
     margin-left: auto;
+    padding: 2rem;
   }
   .form-name{
     display:none;
@@ -30,6 +31,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+  }
+
+  .form-option:first-of-type{
+    margin-top: 0.5rem;
   }
   
   .form-input {
@@ -42,21 +47,18 @@
     background-color:#D4B4F4;
     color: black;
     font-size: 1.2em;
-    
-    
   }
   .form-input::placeholder {
     color: #D4B4F4; /* Match the background color */
   }
   .form-label{
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: black;
     margin-top: 20px;
     margin-right: auto;
     margin-left: 15%;
   }
   .form-button {
-    width: 25%;
     padding: 20px;
     margin-top: 4rem;
     background-color: #B384E1;
@@ -65,8 +67,52 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     font-size: 1.5em;
+    margin: 3rem;
+  }
+  .form-buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   .form-button:hover {
     background-color: #a368df;
+  }
+
+
+
+  @media only screen and (max-width: 768px) {
+    .form-container {
+      max-width: 70%;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .form-input {
+      width: 90%;
+      padding: 15px;
+      margin: 1.2em;
+      font-size: 1em;
+    }
+
+    .form-label{
+      font-size: 1em;
+      
+    }
+
+    .form-button {
+      padding: 10px;
+      margin-top: 1rem;
+      font-size: 1em;
+      margin: 1.2rem;
+    }
+
+    .form-option{
+      width: 100%;
+    }
+
+    .form-option:first-of-type{
+      margin-top: 1rem;
+      padding-top:1rem;
+    }
   }

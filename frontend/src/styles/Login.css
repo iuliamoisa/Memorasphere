@@ -12,17 +12,8 @@
     height: 100vh;
 }
 
-.learn-more-button {
-    display: inline-block;
-    background-color: #007bff; /* Set your desired background color */
-    color: #fff; /* Set text color */
-    padding: 10px 20px; /* Set padding */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Add border radius */
-    text-decoration: none; /* Remove default link underline */
-    cursor: pointer; /* Change cursor to pointer on hover */
+@media only screen and (max-width: 768px) {
+  .main-login{
+      padding: 10rem 0;
   }
-  
-  .learn-more-button:hover {
-    background-color: #0056b3; /* Change background color on hover */
-  }
+}

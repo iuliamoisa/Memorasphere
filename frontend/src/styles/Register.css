@@ -5,9 +5,16 @@
     font-family: "Regular", sans-serif;
   }
 
+
   .main-register{
     background-image: url(../images/bg2purple.svg);
     background-size: cover;
     background-position: center;
     height: 100vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-register{
+        padding: 5rem 0;
+    }
 }

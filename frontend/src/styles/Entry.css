@@ -42,3 +42,42 @@
     object-fit: cover; 
     object-position: center; 
 }
+
+@media only screen and (max-width: 768px){
+    .entry-container {
+        padding: 1.7rem;
+        height: 100%;
+        margin: 1rem;
+    }
+
+
+    .entry-content {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+      
+    .entry-date {
+        margin: 1.2rem 0;
+    }
+    
+}
+
+@media only screen and (min-width: 820px){
+    .entry-container {
+        padding: 3rem;
+    }
+
+
+    .entry-content {
+        padding: 1.2rem;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+      
+    .entry-date {
+        margin: 1.2rem 0;
+    }
+    .delete-button {
+        font-size: 2rem;
+    }
+}

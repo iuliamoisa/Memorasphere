@@ -19,6 +19,10 @@ function Form({ route, method: initialMethod }) {
         setMethod('register');
         navigate('/register');
     };
+    const handleLoginClick = () => {
+        setMethod('login');
+        navigate('/login');
+    };
 
     const name = method === "login" ? "Login" : "Register";
 
@@ -96,13 +100,18 @@ function Form({ route, method: initialMethod }) {
                     placeholder="Password"
                 />
             </div>
-            {loading && <LoadingIndicator />}
-            <button className="form-button" type="submit">
-                {name}
-            </button>
-            {method === "login" && (
-                <button className="form-button" type="button" onClick={handleRegisterClick}>Register</button>
-            )}
+            {/* {loading && <LoadingIndicator />} */}
+            <div className="form-buttons">
+                <button className="form-button" type="submit">
+                    {name}
+                </button>
+                {method === "login" && (
+                    <button className="form-button" type="button" onClick={handleRegisterClick}>Register</button>
+                )}
+                {method === "register" && (
+                    <button className="form-button" type="button" onClick={handleLoginClick}>Login</button>
+                )}
+            </div>
         </form>
     );
 }
