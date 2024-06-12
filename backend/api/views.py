@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics
-from .serializers import UserSerializer, EntrySerializer
+from .serializers import UserSerializer, EntrySerializer, AlbumSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from .models import Entry
+from .models import Entry, Album
 from api.summarizer import sumarizare_text
 import json
 import os
@@ -196,3 +196,39 @@ class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
+# class AlbumViewSet(generics.ListCreateAPIView):
+#     serializer_class = AlbumSerializer
+#     permission_classes = [IsAuthenticated]
+
+#     def get_queryset(self):
+#         return Album.objects.filter(author=self.request.user)
+
+#     def perform_create(self, serializer):
+#         serializer.save(author=self.request.user)
+
+
+# class AlbumViewSet(generics.ListCreateAPIView):
+#     serializer_class = AlbumSerializer
+#     permission_classes = [IsAuthenticated]
+
+#     def get_queryset(self):
+#         return Album.objects.filter(author=self.request.user).prefetch_related('entries')
+
+#     def perform_create(self, serializer):
+#         serializer.save(author=self.request.user)
+
+class AlbumViewSet(generics.ListCreateAPIView):
+    serializer_class = AlbumSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Album.objects.filter(author=self.request.user).prefetch_related('entries')
+
+    def perform_create(self, serializer):
+        album = serializer.save(author=self.request.user)
+        entries_data = self.request.data.get('entries')
+        if entries_data:
+            for entry_id in entries_data:
+                entry = Entry.objects.get(id=entry_id)
+                album.entries.add(entry)

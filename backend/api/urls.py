@@ -6,5 +6,5 @@ urlpatterns = [
     path('entries/delete/<int:pk>/', views.EntryDelete.as_view(), name='delete-entry'),
     path('sumarizare/', sumarizare, name='sumarizare'),
     path('download_image/', download_image, name='download_image'),
-    
+    path('albums/', views.AlbumViewSet.as_view(), name='album-list'),
 ]

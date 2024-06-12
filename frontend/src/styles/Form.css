@@ -78,6 +78,11 @@
   .form-button:hover {
     background-color: #a368df;
   }
+  .error-message {
+    color: red;
+    font-size: 1em;
+    margin-top: 5px;
+}
 
 
 

@@ -16,6 +16,13 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  top: 0;
+  right: 0; 
+  left: 0; 
+  bottom: 0; 
+  position: fixed;
+  overflow-y: auto; 
+  overflow-x: hidden; 
 }
 .home-title{
     font-family: "ABeeZee", sans-serif;
@@ -112,7 +119,7 @@
 }
 .home-buttons{
   margin-top:1rem;
-  background-color: red;
+  /* background-color: red; */
   width: 80%;
 }
 

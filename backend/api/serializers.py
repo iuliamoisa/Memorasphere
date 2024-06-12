@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Entry, GeneratedPhoto
+from .models import Entry, GeneratedPhoto, Album
 
 # a serializer class is a class that converts complex data types, 
 # such as querysets and model instances, into native Python datatypes that can then be easily 
@@ -34,3 +34,20 @@ class GeneratedPhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = GeneratedPhoto
         fields = '__all__'
+
+# class AlbumSerializer(serializers.ModelSerializer):
+#     entries = serializers.PrimaryKeyRelatedField(queryset=Entry.objects.all(), many=True)
+
+#     class Meta:
+#         model = Album
+#         fields = ['id', 'name', 'entries', 'created_at', 'author']
+#         extra_kwargs = {'author': {'read_only': True}}
+
+
+class AlbumSerializer(serializers.ModelSerializer):
+    entries = EntrySerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Album
+        fields = ['id', 'name', 'entries', 'created_at', 'author']
+        extra_kwargs = {'author': {'read_only': True}}

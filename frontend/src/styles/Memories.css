@@ -15,8 +15,14 @@
 .memories-page{
     background-color: #D4B4F4;  
     min-height: 100vh;
-    padding-top: 0.5rem;
     width:100%;
+  top: 0;
+  right: 0; 
+  left: 0; 
+  bottom: 0; 
+  position: fixed;
+  overflow-y: auto; 
+  overflow-x: hidden; 
 }
 
 .memories-title{

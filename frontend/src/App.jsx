@@ -8,6 +8,8 @@ import HomeGuest from "./pages/HomeGuest"
 import Memories from "./pages/Memories"
 import CreateMemory from "./pages/CreateMemory"
 import Learn from "./pages/Learn"
+import GenerateAlbum from "./pages/GenerateAlbum"
+import UserAlbums from "./pages/UserAlbums"
 import ProtectedRoute from "./components/ProtectedRoute"
 
 function Logout(){
@@ -38,6 +40,8 @@ function App() {
       <Route path="/create-memo" element={<CreateMemory />} />
       <Route path="/memories" element={<Memories />} />
       <Route path="/learnMore" element={<Learn />} />
+      <Route path="/generate-album" element={<GenerateAlbum />} />
+      <Route path="/albums" element={<UserAlbums />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
    </BrowserRouter>

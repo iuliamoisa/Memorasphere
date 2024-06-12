@@ -13,7 +13,7 @@
 .create-memory-page {
   background-color: #d4b4f4;
   min-height: 100vh;
-  padding-top: 0.5rem;
+  
 }
 
 .create-memory-title {
@@ -134,6 +134,28 @@
   object-fit: contain;
 }
 
+.button-container{
+  width: 100%;
+  text-align: center; 
+}
+
+.save-button, .cancel-button{
+  padding: 10px;
+  margin: 0.5rem ;
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 1em;
+  font-weight: 400;
+}
+.save-button{
+  background-color: #fcff6a;
+}
+.cancel-button{
+  background-color: #b384e1;
+
+}
 /* 
 div {
     font-family: Arial, sans-serif;
