@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Masonry from '@mui/lab/Masonry';
+import { Box, Button, Typography } from "@mui/material";
 import "../styles/Memories.css"
 import Card from '../components/Card'
 import FilterBar from '../components/FilterBar'
@@ -66,11 +68,20 @@ function Memories() {
                     <p className="no-entries-txt">There are currently no <i>entries</i> in your diary.</p>
                 </div>
             ) : (
-                <div className="entries">
+                // <div className="entries">
+                //     {entry.map((entry) => (
+                //         <Entry className="entry" entry={entry} onDelete={deleteEntry} key={entry.id} />
+                //     ))}
+                // </div>
+                <Box sx={{ width: '100%', minHeight: 400 }}>
+                <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2} >
                     {entry.map((entry) => (
-                        <Entry className="entry" entry={entry} onDelete={deleteEntry} key={entry.id} />
+                    <Box key={entry.id} sx={{ mb: 4 }}>
+                        <Entry entry={entry} onDelete={deleteEntry} />
+                    </Box>
                     ))}
-                </div>
+                </Masonry>
+                </Box>
             )}
     </div>
   );

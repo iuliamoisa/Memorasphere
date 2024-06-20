@@ -8,6 +8,7 @@ import '../styles/UserAlbum.css';
 function UserAlbums() {
     const [albums, setAlbums] = useState([]);
     const [selectedAlbum, setSelectedAlbum] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
 
     useEffect(() => {
         getAlbums();
@@ -44,6 +45,23 @@ function UserAlbums() {
     const handleCloseBook = () => {
         setSelectedAlbum(null);
     };
+    const handleModify = (albumId) => {
+        setIsEditing(true);
+        // Navighează la pagina de modificare sau deschide un formular de modificare
+    };
+    const handleDelete = (albumId) => {
+        api.delete(`/api/albums/delete/${albumId}/`)
+            .then((res) => {
+                alert('Album deleted');
+                setAlbums(albums.filter((album) => album.id !== albumId));
+                handleCloseBook();
+            })
+            .catch((err) => {
+                alert('Failed to delete album');
+                console.error(err);
+            });
+    };
+
 
     return (
         <div className="user-albums-page">
@@ -55,7 +73,10 @@ function UserAlbums() {
                 ))}
             </div>
             {selectedAlbum && (
-                <BookViewer album={selectedAlbum} onClose={handleCloseBook} />
+                <BookViewer album={selectedAlbum} 
+                onClose={handleCloseBook}
+                onDelete={handleDelete} 
+                onModify={handleModify} />
             )}
         </div>
     );

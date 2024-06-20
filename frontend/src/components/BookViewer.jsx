@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/BookViewer.css'; // Ensure you have styles for the book viewer
 
-function BookViewer({ album, onClose }) {
+function BookViewer({ album, onClose, onDelete, onModify  }) {
     const [currentPage, setCurrentPage] = useState(0);
 
     const nextPage = () => {
@@ -38,12 +38,15 @@ function BookViewer({ album, onClose }) {
                 </div>
                 <button className="next-page" onClick={nextPage}>&gt;</button>
             </div>
+            <button onClick={() => onDelete(album.id)} className="delete-button">Delete</button>
+            <button onClick={() => onModify(album.id)} className="modify-button">Modify</button>
         </div>
     );
 }
 
 BookViewer.propTypes = {
     album: PropTypes.shape({
+        id: PropTypes.number.isRequired,
         entries: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.number.isRequired,
@@ -52,6 +55,8 @@ BookViewer.propTypes = {
         ).isRequired,
     }).isRequired,
     onClose: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
+    onModify: PropTypes.func.isRequired
 };
 
 export default BookViewer;

@@ -191,6 +191,14 @@ class EntryDelete(generics.DestroyAPIView):
         user = self.request.user
         return Entry.objects.filter(author=user)
 
+class AlbumDelete(generics.DestroyAPIView):
+    serializer_class = AlbumSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Album.objects.filter(author=user)
+    
 class CreateUserView(generics.CreateAPIView):
 # handles the creating of a new user 
     queryset = User.objects.all()

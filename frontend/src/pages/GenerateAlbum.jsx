@@ -3,6 +3,7 @@ import api from '../api';
 import { useNavigate } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import '../styles/GenerateAlbum.css';
+import { Grid, Box, Button, Checkbox, TextField, Typography } from '@mui/material';
 
 function GenerateAlbum() {
     const [entries, setEntries] = useState([]);
@@ -41,7 +42,7 @@ function GenerateAlbum() {
         api.post('/api/albums/', data)
             .then((res) => {
                 alert('Album created');
-                navigate('/memories');
+                navigate('/albums');
             })
             .catch((err) => {
                 alert('Failed to create album');
@@ -51,20 +52,43 @@ function GenerateAlbum() {
 
     return (
         <div className="generate-album-page">
-            <BackButton></BackButton>
+            <Box display="flex" justifyContent="space-between" alignItems="center">
+                <BackButton />
+                <Button className="generate-album-button" variant="contained" color="primary" onClick={() => navigate('/albums')}>
+                    See Albums
+                </Button>
+            </Box>
             <h1 className="generate-album-title">Generate Album</h1>
-            <input
+            {/* <input
                     className='album-name-input'
                     type="text"
                     placeholder="Album Name"
                     value={albumName}
                     onChange={(e) => setAlbumName(e.target.value)}
-                />
+                /> */}
+            {selectedEntries.length > 0 && (
+                 <Grid container spacing={2} alignItems="center" my={2}>
+                 <Grid item xs={12} md={8}>
+                     <TextField
+                         className='album-name-input'
+                         label="Album Name"
+                         variant="outlined"
+                         value={albumName}
+                         onChange={(e) => setAlbumName(e.target.value)}
+                         fullWidth
+                     />
+                 </Grid>
+                 <Grid item xs={12} md={4}>
+                     <Button onClick={handleSubmit} variant="contained" color="secondary" className="generate-album-button">
+                         Create Album
+                     </Button>
+                 </Grid>
+             </Grid>
+            )}
                 
-                
-            <div className="entries">
+            <Box className="entries">
                 {entries.map((entry) => (
-                    <div key={entry.id} className="entry">
+                    <Box key={entry.id} className="entry">
                         <input
                         className='entry-checkbox'
                             type="checkbox"
@@ -73,10 +97,12 @@ function GenerateAlbum() {
                         />
                         {entry.image && <img src={entry.image} alt="Entry" className="entry-image" />}
                         <span>{entry.content}</span>
-                    </div>
+                    </Box>
                 ))}
-            </div>
-            <button onClick={handleSubmit} className="generate-album-button">Create Album</button>
+            </Box>
+            {/* {selectedEntries.length > 0 && (
+                
+            )} */}
         </div>
     );
 }
