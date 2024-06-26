@@ -13,12 +13,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 50%;
     background-color: yellow;
-    height: 100%;
+    min-height: 100%;
     margin-left: auto;
     padding: 2rem;
   }
@@ -46,13 +45,13 @@
     box-sizing: border-box;
     background-color:#D4B4F4;
     color: black;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .form-input::placeholder {
     color: #D4B4F4; /* Match the background color */
   }
   .form-label{
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: black;
     margin-top: 20px;
     margin-right: auto;
@@ -66,7 +65,7 @@
     border: 3px solid black;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 3rem;
   }
   .form-buttons{
@@ -80,7 +79,7 @@
   }
   .error-message {
     color: red;
-    font-size: 1em;
+    font-size: 1.2em;
     margin-top: 5px;
 }
 

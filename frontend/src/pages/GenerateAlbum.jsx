@@ -54,9 +54,9 @@ function GenerateAlbum() {
         <div className="generate-album-page">
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 <BackButton />
-                <Button className="generate-album-button" variant="contained" color="primary" onClick={() => navigate('/albums')}>
+                <button className="generate-album-button"  onClick={() => navigate('/albums')}>
                     See Albums
-                </Button>
+                </button>
             </Box>
             <h1 className="generate-album-title">Generate Album</h1>
             {/* <input
@@ -79,9 +79,9 @@ function GenerateAlbum() {
                      />
                  </Grid>
                  <Grid item xs={12} md={4}>
-                     <Button onClick={handleSubmit} variant="contained" color="secondary" className="generate-album-button">
+                     <button onClick={handleSubmit} className="generate-album-button">
                          Create Album
-                     </Button>
+                     </button>
                  </Grid>
              </Grid>
             )}
@@ -100,9 +100,7 @@ function GenerateAlbum() {
                     </Box>
                 ))}
             </Box>
-            {/* {selectedEntries.length > 0 && (
-                
-            )} */}
+
         </div>
     );
 }

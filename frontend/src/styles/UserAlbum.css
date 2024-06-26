@@ -1,52 +1,10 @@
-/* .user-albums-page {
-    padding: 20px;
-    background-color: #d4b4f4;
-    min-height: 100vh;
-    padding-top: 0.5rem;
-}
 
-.user-albums-title{
-    font-family: "ABeeZee", sans-serif;
-    font-weight: 400;
-    font-style: regular;
-    font-size: 3rem;
-    width: 100%;
-    margin: 2rem auto;
-    text-align: center;
-    background-color: #fcff6a;
-    padding: 1rem 0;
-    border: 3px solid black;
-}
-.albums {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.album {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: calc(33.333% - 20px);
-    box-sizing: border-box;
-    text-align: center;
-    padding: 2rem;
-    border-radius: 5px;
-    position: relative;
-    background-color: #fdff6a;
-    height: 80%;
-    margin: 2rem;
-}
-
-.album h2 {
-    margin: 0;
-} */
 .user-albums-page {
     padding: 20px;
     background-color: #d4b4f4;
     min-height: 100vh;
     padding-top: 0.5rem;
+    
 }
 
 .user-albums-title {
@@ -60,13 +18,15 @@
     background-color: #fcff6a;
     padding: 1rem 0;
     border: 3px solid black;
+    margin-bottom: 2rem;
 }
 
 .albums {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 2rem;
     justify-content: center;
+    
 }
 
 .album {

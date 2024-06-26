@@ -33,6 +33,7 @@
     padding: 0.5rem 0;
     border: 2px solid black;
     font-size: 1.5rem;
+    
   }
   .entry-checkbox{
     width: 30px;  
@@ -47,14 +48,14 @@
     margin: 1rem;
   }
   .generate-album-button {
-    padding: 20px;
-    margin: 1rem;
+    padding: 15px;
+    margin: 0.5rem;
     background-color: #b384e1;
     color: black;
     border: 3px solid black;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
   }
   

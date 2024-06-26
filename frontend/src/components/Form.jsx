@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/Form.css"
+import "../styles/Form.css";
 import LoadingIndicator from "./LoadingIndicator";
 
 function Form({ route, method: initialMethod }) {
@@ -11,17 +11,18 @@ function Form({ route, method: initialMethod }) {
     const [loading, setLoading] = useState(false);
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
+    const [error, setError] = useState("");
     const navigate = useNavigate();
 
     const [method, setMethod] = useState(initialMethod);
 
     const handleRegisterClick = () => {
-        setMethod('register');
-        navigate('/register');
+        setMethod("register");
+        navigate("/register");
     };
     const handleLoginClick = () => {
-        setMethod('login');
-        navigate('/login');
+        setMethod("login");
+        navigate("/login");
     };
 
     const name = method === "login" ? "Login" : "Register";
@@ -29,32 +30,43 @@ function Form({ route, method: initialMethod }) {
     const handleSubmit = async (e) => {
         setLoading(true);
         e.preventDefault();
+        setError("");
 
         try {
             const formData = { username, password };
-            // Dacă este formularul de înregistrare, adaugă și fullName și email în obiectul de date trimis la server
             if (method === "register") {
                 formData.full_name = fullName;
                 formData.email = email;
             }
 
-            const res = await api.post(route, formData)
+            const res = await api.post(route, formData);
             if (method === "login") {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access);
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
-                navigate("/")
+                navigate("/");
             } else {
-                navigate("/login")
+                navigate("/login");
             }
         } catch (error) {
-            alert(error)
+            if (error.response) {
+                if (error.response.status === 400) {
+                    setError("Username or email already exists.");
+                } else if (error.response.status === 401) {
+                    setError("Incorrect username or password.");
+                } else {
+                    setError("An error occurred. Please try again.");
+                }
+            } else {
+                setError("An error occurred. Please check your connection and try again.");
+            }
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     };
 
     return (
         <form onSubmit={handleSubmit} className="form-container">
+            {error && <div className="error-message">{error}</div>}
             <h1 className="form-name">{name}</h1>
             <div className="form-option">
                 <label className="form-label">Username</label>
@@ -66,7 +78,7 @@ function Form({ route, method: initialMethod }) {
                     placeholder="Username"
                 />
             </div>
-             {method === "register" && (
+            {method === "register" && (
                 <>
                     <div className="form-option">
                         <label className="form-label">Full name</label>
@@ -100,20 +112,24 @@ function Form({ route, method: initialMethod }) {
                     placeholder="Password"
                 />
             </div>
-            {/* {loading && <LoadingIndicator />} */}
+            {loading && <LoadingIndicator />}
             <div className="form-buttons">
                 <button className="form-button" type="submit">
                     {name}
                 </button>
                 {method === "login" && (
-                    <button className="form-button" type="button" onClick={handleRegisterClick}>Register</button>
+                    <button className="form-button" type="button" onClick={handleRegisterClick}>
+                        Register
+                    </button>
                 )}
                 {method === "register" && (
-                    <button className="form-button" type="button" onClick={handleLoginClick}>Login</button>
+                    <button className="form-button" type="button" onClick={handleLoginClick}>
+                        Login
+                    </button>
                 )}
             </div>
         </form>
     );
 }
 
-export default Form
+export default Form;

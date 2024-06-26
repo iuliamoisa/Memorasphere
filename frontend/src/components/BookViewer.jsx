@@ -38,8 +38,10 @@ function BookViewer({ album, onClose, onDelete, onModify  }) {
                 </div>
                 <button className="next-page" onClick={nextPage}>&gt;</button>
             </div>
-            <button onClick={() => onDelete(album.id)} className="delete-button">Delete</button>
-            <button onClick={() => onModify(album.id)} className="modify-button">Modify</button>
+            <div className="button-container">
+                <button onClick={() => onDelete(album.id)} className="delete-button">Delete</button>
+                <button onClick={() => onModify(album.id)} className="modify-button">Modify</button>
+            </div>
         </div>
     );
 }
