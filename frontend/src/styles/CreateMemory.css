@@ -13,7 +13,6 @@
 .create-memory-page {
   background-color: #d4b4f4;
   min-height: 100vh;
-  
 }
 
 .create-memory-title {
@@ -72,16 +71,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
-.placeholder{
+.placeholder {
   width: 80%;
   padding: 2rem;
   background-color: #d9d9d9;
   border-radius: 10px;
   margin: 0 auto;
 }
-.summary-text-area{
+.summary-text-area {
   display: block;
   width: 100%;
   overflow: hidden;
@@ -98,50 +96,23 @@
   margin-bottom: 2rem;
 }
 
-/* .summary-text-area{
-  width: 100%;
-  height: auto;
-  resize: none;
-  padding: 1rem;
-  background-color: #d9d9d9;
-  border: none;
-  font-size: 1.2em;
-  font-weight: 400;
-  cursor: default;
-  outline: none;
-  color: black;
-  box-shadow: none;
-} */
-
-/* .summary-text-area {
-  width: 100%;
-  resize: none; 
-  overflow: hidden;
-  background-color: #d9d9d9;
-  border: none;
-  border-radius: 10px;
-  padding: 1rem;
-  font-size: 1.5em;
-  font-family: "Montserrat", sans-serif;
-  box-sizing: border-box;
-} */
-
 .generated-image {
-  max-width: 70%; 
-  height: auto; 
-  display: block; 
-  margin: 0 auto; 
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
   object-fit: contain;
 }
 
-.button-container{
+.button-container {
   width: 100%;
-  text-align: center; 
+  text-align: center;
 }
 
-.save-button, .cancel-button{
+.save-button,
+.cancel-button {
   padding: 10px;
-  margin: 0.5rem ;
+  margin: 0.5rem;
   color: black;
   border: 2px solid black;
   cursor: pointer;
@@ -149,78 +120,37 @@
   font-size: 1em;
   font-weight: 400;
 }
-.save-button{
+.save-button {
   background-color: #fcff6a;
 }
-.cancel-button{
+.cancel-button {
   background-color: #b384e1;
-
 }
-/* 
-div {
-    font-family: Arial, sans-serif;
-  }
-  
 
-  .entries-section {
-    margin-bottom: 2rem;
+@media only screen and (max-width: 768px) {
+  .create-memory-content {
+    display: flex;
+    flex-direction: column;
   }
-  
-  .entries-section h2 {
-    color: #333;
-    font-size: 24px;
+  .left-panel {
+    width: 90%;
+    margin: 0.4rem;
   }
-  
 
-  .entry {
-    background-color: #f9f9f9;
-    border-left: 5px solid #007bff;
-    margin: 10px 0;
-    padding: 10px 15px;
-    border-radius: 5px;
+  .text-area {
+    min-height: 35em;
+    font-size: 1.3em;
   }
-  
 
-  form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
+  .right-panel {
+    width: 95%;
+    margin-top: 5px;
   }
-  
-  form h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
+
+  .summary-text-area {
+    padding: 2rem;
+    line-height: 1.2rem;
+    font-size: 1.2em;
+    margin-bottom: 1rem;
   }
-  
-  form label {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  form input,
-  form textarea {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .submit-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  } */
+}

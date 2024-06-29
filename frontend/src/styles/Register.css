@@ -1,29 +1,28 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Regular", sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Regular", sans-serif;
+}
 
-
-  .main-register{
-    background-image: url(../images/bg2purple.svg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    min-height: 100vh;
-    width:100%;
+.main-register {
+  background-image: url(../images/bg2purple.svg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
   top: 0;
-  right: 0; 
-  left: 0; 
-  bottom: 0; 
+  right: 0;
+  left: 0;
+  bottom: 0;
   position: fixed;
-  overflow-y: auto; 
-  overflow-x: hidden; 
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
-    .main-register{
-        padding: 5rem 0;
-    }
+  .main-register {
+    padding: 5rem 0;
+  }
 }

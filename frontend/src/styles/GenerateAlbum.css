@@ -47,9 +47,8 @@
     padding: 2rem;
     margin: 1rem;
   }
-  .generate-album-button {
+  .generate-album-button, .add-button{
     padding: 15px;
-    margin: 0.5rem;
     background-color: #b384e1;
     color: black;
     border: 3px solid black;

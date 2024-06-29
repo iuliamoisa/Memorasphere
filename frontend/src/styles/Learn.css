@@ -1,71 +1,67 @@
-.learn-page{
-    background-image: url(../images/bg2purple.svg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    padding: 2rem;
+.learn-page {
+  background-image: url(../images/bg2purple.svg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 2rem;
 }
 
-.learn-page-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 60%;
-    background-color: yellow;
-    border: 3px solid black;
-    margin: 10% auto;
+.learn-page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 60%;
+  background-color: yellow;
+  border: 3px solid black;
+  margin: 10% auto;
 }
 
-.learn-page-title{
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+.learn-page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
-.learn-page-text{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 2rem;
+.learn-page-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 2rem;
 }
 
-@media only screen and (max-width: 1024px){
-    .learn-page{
-            top:0;
-            position:fixed;
-          
-    }
-    .learn-page-title{
-        font-size: 1.5rem;
-        margin-bottom: 0.2rem;
-        text-align: center;
-    }
-.learn-page-text{
+@media only screen and (max-width: 1024px) {
+  .learn-page {
+    top: 0;
+    position: fixed;
+  }
+  .learn-page-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+  }
+  .learn-page-text {
     font-size: 1rem;
     margin: 0 0.7rem;
-}
-    .learn-page-content{
-        height: 80%;
-        width: 90%;
-        margin: 10% auto;
-    }
-}
-
-
-@media only screen and (min-width: 1024px) and (max-width: 1400px){
-
-    .learn-page-title{
-        font-size: 5rem;
-        margin: 1rem 0.2rem;
-    }
-    .learn-page-text{
-        font-size: 2rem;
-        margin: 0 2rem;
-    }
-        .learn-page-content{
-            height: 70%;
-            width: 90%;
-            margin: 10% auto;
-        }
+  }
+  .learn-page-content {
+    height: 80%;
+    width: 90%;
+    margin: 10% auto;
+  }
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+  .learn-page-title {
+    font-size: 5rem;
+    margin: 1rem 0.2rem;
+  }
+  .learn-page-text {
+    font-size: 2rem;
+    margin: 0 2rem;
+  }
+  .learn-page-content {
+    height: 70%;
+    width: 90%;
+    margin: 10% auto;
+  }
+}

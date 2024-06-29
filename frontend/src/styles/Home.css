@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400;1,700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 * {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -8,7 +8,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 .main-home {
@@ -17,157 +16,149 @@
   background-position: center;
   height: 100vh;
   top: 0;
-  right: 0; 
-  left: 0; 
-  bottom: 0; 
+  right: 0;
+  left: 0;
+  bottom: 0;
   position: fixed;
-  overflow-y: auto; 
-  overflow-x: hidden; 
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.home-title{
-    font-family: "ABeeZee", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 6rem;
-    width:40%;
-    padding: 4rem; 
-}
-
-.home-subtitle{
-    font-family: "ABeeZee", sans-serif;
-    font-weight: 200;
-    font-size: 2.5rem;
-    width:30%;
-    padding: 2rem; 
-    margin: 0 4rem;
+.home-title {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 6rem;
+  width: 40%;
+  padding: 4rem;
 }
 
+.home-subtitle {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 200;
+  font-size: 2.5rem;
+  width: 30%;
+  padding: 2rem;
+  margin: 0 4rem;
+}
 
 .home-button {
-    padding: 20px;
-    margin: 1rem;
-    background-color: #B384E1;
-    color: black;
-    border: 3px solid black;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    font-size: 1em;
-  }
-  
-  .home-button:hover {
-    background-color: #a368df;
-  }
-
-  .home-buttons{
-    width:30%;
-    margin-right: auto;
-    margin-left: 2rem;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  @media only screen and (max-width: 768px) {
-    .main-home {
-      top:0;
-      position:fixed;
-    }
-    .home-title{
-      font-size: 4rem;
-      padding: 3rem; 
-  }
-
-  .home-subtitle{
-   padding:1rem;
-    font-size: 2rem;
-    width:70%;
-    margin: 1rem 2rem;
-    margin-top: 8rem;
-}
-.home-button {
-  margin: 0.5rem;
+  padding: 20px;
+  margin: 1rem;
+  background-color: #b384e1;
+  color: black;
+  border: 3px solid black;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
   font-size: 1em;
 }
-.home-buttons{
-  width:50%;
-  margin-top:2rem;
+
+.home-button:hover {
+  background-color: #a368df;
 }
 
+.home-buttons {
+  width: 30%;
+  margin-right: auto;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: space-around;
 }
 
-@media only screen and (max-height: 700px){
-  .home-subtitle{
-     margin-top: 0;
- }
-}
-
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 768px) {
   .main-home {
-    top:0;
-    position:fixed;
+    top: 0;
+    position: fixed;
+  }
+  .home-title {
+    font-size: 4rem;
+    padding: 3rem;
+  }
+
+  .home-subtitle {
+    padding: 1rem;
+    font-size: 2rem;
+    width: 70%;
+    margin: 1rem 2rem;
+    margin-top: 8rem;
+  }
+  .home-button {
+    margin: 0.5rem;
+    font-size: 1em;
+  }
+  .home-buttons {
+    width: 50%;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .home-subtitle {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main-home {
+    top: 0;
+    position: fixed;
     width: 100%;
   }
-  .home-title{
+  .home-title {
     font-size: 3rem;
-    width:60%;
-    padding: 4rem; 
-}
-.home-subtitle{
-  font-size: 1.4rem;
-  width:40%;
-  padding: 2.2rem; 
-  margin: 2rem 1rem;
-}
-.home-buttons{
-  margin-top:1rem;
-  /* background-color: red; */
-  width: 80%;
-}
+    width: 60%;
+    padding: 4rem;
+  }
+  .home-subtitle {
+    font-size: 1.4rem;
+    width: 40%;
+    padding: 2.2rem;
+    margin: 2rem 1rem;
+  }
+  .home-buttons {
+    margin-top: 1rem;
+    width: 80%;
+  }
 
-.home-button {
-  padding: 10px;
-  margin: 0.5rem 1rem;
-  font-size: 0.8em;
-  
-}
+  .home-button {
+    padding: 10px;
+    margin: 0.5rem 1rem;
+    font-size: 0.8em;
+  }
 }
 
-
-
-
-@media only screen and (min-width: 768px) and (max-width: 1400px){
-
-  .home-title{
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+  .home-title {
     font-size: 7rem;
-    width:70%;
-    padding: 3rem; 
-}
-.home-buttons{
-  width:60%;
-  margin-top:5rem;
-}
-.home-subtitle{
-  font-size: 3rem;
-  width:50%;
-  padding: 2rem; 
-  margin: 3rem 1rem;
-}
+    width: 70%;
+    padding: 3rem;
+  }
+  .home-buttons {
+    width: 60%;
+    margin-top: 5rem;
+  }
+  .home-subtitle {
+    font-size: 3rem;
+    width: 50%;
+    padding: 2rem;
+    margin: 3rem 1rem;
+  }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1300px){
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
   .main-home {
-    top:0;
-    position:fixed;
+    top: 0;
+    position: fixed;
     width: 100%;
   }
-  .home-title{
+  .home-title {
     font-size: 6rem;
-    width:60%;
-    padding: 4rem; 
-}
-.home-subtitle{
-  font-size: 2rem;
-  width:45%;
-  padding: 2rem; 
-  margin: 3rem 1rem;
-}
+    width: 60%;
+    padding: 4rem;
+  }
+  .home-subtitle {
+    font-size: 2rem;
+    width: 45%;
+    padding: 2rem;
+    margin: 3rem 1rem;
+  }
 }

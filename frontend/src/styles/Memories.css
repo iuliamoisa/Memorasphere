@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400;1,700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 * {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -8,64 +8,62 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
-
-.memories-page{
-    background-color: #D4B4F4;  
-    min-height: 100vh;
-    width:100%;
+.memories-page {
+  background-color: #d4b4f4;
+  min-height: 100vh;
+  width: 100%;
   top: 0;
-  right: 0; 
-  left: 0; 
-  bottom: 0; 
+  right: 0;
+  left: 0;
+  bottom: 0;
   position: fixed;
-  overflow-y: auto; 
-  overflow-x: hidden; 
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.memories-title{
-    font-family: "ABeeZee", sans-serif;
-    font-weight: 400;
-    font-style: regular;
-    font-size: 3rem;
-    width:100%;
-    margin: 2rem auto;
-    text-align: center;
-    background-color: #FCFF6A;
-    padding: 1rem 0;
-    border: 3px solid black;
+.memories-title {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 400;
+  font-style: regular;
+  font-size: 3rem;
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
+  background-color: #fcff6a;
+  padding: 1rem 0;
+  border: 3px solid black;
 }
 
-.no-entries-img{
-    width: 15%;
-    height: auto;
-    margin: 3.5rem auto;
-    display: block;
+.no-entries-img {
+  width: 15%;
+  height: auto;
+  margin: 3.5rem auto;
+  display: block;
 }
 
-.no-entries-txt{
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 1rem;
-    font-weight: 600;
+.no-entries-txt {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1rem;
+  font-weight: 600;
 }
 
-.entries{
+.entries {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem; 
+  gap: 2rem;
   height: 100vh;
 }
 
-.create-entry-button{
+.create-entry-button {
   width: 100%;
-  text-align: center; 
+  text-align: center;
 }
-.submit-button{
+.submit-button {
   padding: 20px;
-  background-color: #B384E1;
+  background-color: #b384e1;
   color: black;
   border: 3px solid black;
   cursor: pointer;
@@ -76,27 +74,27 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .memories-page{
+  .memories-page {
     top: 0;
-    right: 0; 
-    left: 0; 
-    bottom: 0; 
+    right: 0;
+    left: 0;
+    bottom: 0;
     position: fixed;
-    overflow-y: auto; 
-    overflow-x: hidden; 
-}
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 
-.create-entry-button{
-  font-size: 0.7rem;
-  padding: 0.1rem;
-  margin: 0.2rem;
-}
-.entries{
-  grid-template-columns: repeat(1, 1fr);
-}
-.memories-title{
-  font-size: 1.5rem;
-}
+  .create-entry-button {
+    font-size: 0.7rem;
+    padding: 0.1rem;
+    margin: 0.2rem;
+  }
+  .entries {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .memories-title {
+    font-size: 1.5rem;
+  }
   .no-entries-img {
     width: 60%;
   }
@@ -106,26 +104,24 @@
   }
 }
 
-
-
-@media only screen and (min-width: 820px) and (max-width: 1024px){
-  .memories-page{
+@media only screen and (min-width: 820px) and (max-width: 1024px) {
+  .memories-page {
     top: 0;
-    right: 0; 
-    left: 0; 
-    bottom: 0; 
+    right: 0;
+    left: 0;
+    bottom: 0;
     position: fixed;
-    overflow-y: auto; 
-    overflow-x: hidden; 
-}
-  .entries{
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .entries {
     grid-template-columns: repeat(2, 1fr);
   }
-  .memories-title{
+  .memories-title {
     font-size: 4rem;
   }
 
-  .create-entry-button{
+  .create-entry-button {
     font-size: 1.5rem;
     padding: 0.1rem;
     margin: 0.2rem;

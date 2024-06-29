@@ -35,14 +35,6 @@ class GeneratedPhotoSerializer(serializers.ModelSerializer):
         model = GeneratedPhoto
         fields = '__all__'
 
-# class AlbumSerializer(serializers.ModelSerializer):
-#     entries = serializers.PrimaryKeyRelatedField(queryset=Entry.objects.all(), many=True)
-
-#     class Meta:
-#         model = Album
-#         fields = ['id', 'name', 'entries', 'created_at', 'author']
-#         extra_kwargs = {'author': {'read_only': True}}
-
 
 class AlbumSerializer(serializers.ModelSerializer):
     entries = EntrySerializer(many=True, read_only=True)

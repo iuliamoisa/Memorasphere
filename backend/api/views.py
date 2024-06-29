@@ -17,6 +17,10 @@ from django.views.decorators.csrf import csrf_exempt
 from googleapiclient.http import MediaIoBaseDownload
 import io
 from django.http import HttpResponse
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.shortcuts import get_object_or_404
 
 def get_folder_id(drive_service):
     query = f"name='licenta' and mimeType='application/vnd.google-apps.folder' and trashed=false"
@@ -58,8 +62,6 @@ def download_image(request):
 
         response = HttpResponse(fh.read(), content_type='image/jpeg')
         response['Content-Disposition'] = 'attachment; filename="generated_image.jpg"'
-
-        # Optional: Delete the image file after serving it
         drive_service.files().delete(fileId=image_id).execute()
 
         return response
@@ -150,14 +152,7 @@ def trimite_sumarizare(summary):
 
     print(f"Fișierul sumarizare.txt a fost încărcat cu succes în directorul 'licenta'.")
     response = drive_service.files().list(q=query, fields='files(id, name)').execute()
-    # image_list = drive_service.files().list(q=f"'{folder_id}' in parents and name = 'generated_image.jpg' and trashed=false").execute().get('files', [])
-    # if image_list:
-    #     image_id = image_list[0]['id']
-    #     drive_service.files().delete(fileId=image_id).execute()
-    #     print("Fișierul generated_image.jpg a fost găsit și șters cu succes.")
-    # else:
-    #     print("Fișierul generated_image.jpg nu a fost găsit în directorul 'licenta'.")
-    # Verifică dacă s-au găsit rezultate
+
     if 'files' in response:
         for file in response['files']:
             print(f"ID: {file['id']}, Nume: {file['name']}")
@@ -183,6 +178,7 @@ class EntryListCreate(generics.ListCreateAPIView):
             print(serializer.errors)
 
 
+
 class EntryDelete(generics.DestroyAPIView):
     serializer_class = EntrySerializer
     permission_classes = [IsAuthenticated]
@@ -205,27 +201,6 @@ class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
 
-# class AlbumViewSet(generics.ListCreateAPIView):
-#     serializer_class = AlbumSerializer
-#     permission_classes = [IsAuthenticated]
-
-#     def get_queryset(self):
-#         return Album.objects.filter(author=self.request.user)
-
-#     def perform_create(self, serializer):
-#         serializer.save(author=self.request.user)
-
-
-# class AlbumViewSet(generics.ListCreateAPIView):
-#     serializer_class = AlbumSerializer
-#     permission_classes = [IsAuthenticated]
-
-#     def get_queryset(self):
-#         return Album.objects.filter(author=self.request.user).prefetch_related('entries')
-
-#     def perform_create(self, serializer):
-#         serializer.save(author=self.request.user)
-
 class AlbumViewSet(generics.ListCreateAPIView):
     serializer_class = AlbumSerializer
     permission_classes = [IsAuthenticated]
@@ -240,3 +215,26 @@ class AlbumViewSet(generics.ListCreateAPIView):
             for entry_id in entries_data:
                 entry = Entry.objects.get(id=entry_id)
                 album.entries.add(entry)
+
+
+class AddEntryToAlbumsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, entry_id):
+        try:
+            entry = get_object_or_404(Entry, id=entry_id, author=request.user)
+            album_ids = request.data.get('albums', [])
+            current_albums = entry.album_set.all()
+            
+            for album in current_albums:
+                if album.id not in album_ids:
+                    album.entries.remove(entry)
+            
+            for album_id in album_ids:
+                album = get_object_or_404(Album, id=album_id, author=request.user)
+                album.entries.add(entry)
+            
+            return Response({"detail": "Entry updated in albums"}, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)

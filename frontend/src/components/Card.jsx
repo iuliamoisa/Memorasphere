@@ -16,7 +16,7 @@ function Card({ memory }) {
 Card.propTypes = {
     memory: PropTypes.shape({
       image: PropTypes.string.isRequired,
-      dateAdded: PropTypes.string.isRequired // Validate the dateAdded property
+      dateAdded: PropTypes.string.isRequired 
     }).isRequired
   };
 

@@ -47,7 +47,6 @@ function UserAlbums() {
     };
     const handleModify = (albumId) => {
         setIsEditing(true);
-        // Navighează la pagina de modificare sau deschide un formular de modificare
     };
     const handleDelete = (albumId) => {
         api.delete(`/api/albums/delete/${albumId}/`)

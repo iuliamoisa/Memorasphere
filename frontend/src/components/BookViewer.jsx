@@ -1,7 +1,7 @@
 // BookViewer.js
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/BookViewer.css'; // Ensure you have styles for the book viewer
+import '../styles/BookViewer.css'; 
 
 function BookViewer({ album, onClose, onDelete, onModify  }) {
     const [currentPage, setCurrentPage] = useState(0);

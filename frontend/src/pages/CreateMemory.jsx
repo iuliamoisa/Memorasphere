@@ -4,7 +4,7 @@ import LoadingIndicator from '../components/LoadingIndicator';
 import api from '../api';
 import axios from "axios";
 import BackButton from '../components/BackButton';
-
+import { useNavigate } from 'react-router-dom';
 
 function CreateMemory() {
     const [content, setContent] = useState("");
@@ -12,7 +12,8 @@ function CreateMemory() {
     const [imageLoading, setImageLoading] = useState(false);
     const [generatedImage, setGeneratedImage] = useState(null);
     const [summary, setSummary] = useState("");
-
+    const navigate = useNavigate();
+    
     const handleGenerate = async () => {
         try {
             setLoading(true);
@@ -109,6 +110,7 @@ function CreateMemory() {
         .then((res) => {
             if (res.status === 201) {
                 alert("Entry created");
+                navigate('/memories');
             } else {
                 alert("Failed to create entry");
             }

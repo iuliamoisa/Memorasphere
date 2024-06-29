@@ -8,4 +8,5 @@ urlpatterns = [
     path('download_image/', download_image, name='download_image'),
     path('albums/', views.AlbumViewSet.as_view(), name='album-list'),
     path('albums/delete/<int:pk>/', views.AlbumDelete.as_view(), name='delete-album'),
+    path('entries/<int:entry_id>/add_to_albums/', views.AddEntryToAlbumsView.as_view(), name='add-to-albums'),
 ]

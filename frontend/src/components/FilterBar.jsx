@@ -5,15 +5,13 @@ import "../styles/FilterBar.css";
 function FilterBar({ onFilterChange }) {
     const [selectedMonth, setSelectedMonth] = useState("");
     const [selectedYear, setSelectedYear] = useState("");
-  
-    // Funcție pentru a gestiona schimbarea lunii
+
     const handleMonthChange = (event) => {
       const month = event.target.value;
       setSelectedMonth(month);
       onFilterChange(month, selectedYear);
     };
-  
-    // Funcție pentru a gestiona schimbarea anului
+
     const handleYearChange = (event) => {
       const year = event.target.value;
       setSelectedYear(year);
@@ -39,11 +37,9 @@ function FilterBar({ onFilterChange }) {
         </select>
         <select value={selectedYear} onChange={handleYearChange}>
           <option value="">Select Year</option>
-          {/* Adăugați opțiunile pentru ani aici, de exemplu: */}
           <option value="2022">2022</option>
           <option value="2023">2023</option>
           <option value="2024">2024</option>
-          {/* Adăugați mai multe opțiuni sau generați dinamic în funcție de nevoi */}
         </select>
       </div>
     );
