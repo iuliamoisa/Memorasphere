@@ -19,8 +19,9 @@ Inspired by my passion for documenting daily experiences and the nostalgic value
   - Frontend: React
   - Backend: Django
 
-- **Databases:**
-  - [e.g., MySQL, PostgreSQL, MongoDB]
+## Database
+
+  For this project, I chose to use the integrated SQLite3 database provided by Django. SQLite3 offers several advantages that align well with the needs of the application: it's a lightweight, serverless database engine that is easy to set up and use, minimizes the need for additional setup, it's well-suited for development and prototyping, where ease of setup and quick iteration are crucial.
 
 ## Features
 
